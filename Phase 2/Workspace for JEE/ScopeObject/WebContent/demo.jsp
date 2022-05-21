@@ -10,7 +10,11 @@
 <%
 out.println("<br/> This is JSP Page");
 Object obj	= request.getAttribute("obj");
+Object obj1  = session.getAttribute("obj1");
+Object obj2 = application.getAttribute("obj2");
 out.println("<br/> Value of num is "+obj);
+out.println("<br/> Value of num is "+obj1);
+out.println("<br/> Value of num is "+obj2);
 %>
 </body>
 </html>
