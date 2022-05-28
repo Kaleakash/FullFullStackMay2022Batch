@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.bean.Login;
 import com.service.LoginService;
@@ -30,7 +31,31 @@ public class LoginController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		PrintWriter pw = response.getWriter();
+			HttpSession hs = request.getSession();
+		response.setContentType("text/html");
+		
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
+		
+		Login ll = new Login();
+		ll.setEmail(email);
+		ll.setPassword(password);
+		
+		LoginService ls = new LoginService();
+		String result = ls.checkUser(ll);
+		RequestDispatcher rd1 = request.getRequestDispatcher("Home.jsp");
+		RequestDispatcher rd2 = request.getRequestDispatcher("index.jsp");
+		
+		if(result.equals("success")) {
+				hs.setAttribute("user", ll.getEmail());
+			rd1.forward(request, response);
+		}else {
+			pw.println("Invalid emailId or Password");
+			rd2.include(request, response);
+		}
+		
 	}
 
 	/**
@@ -40,6 +65,8 @@ public class LoginController extends HttpServlet {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
 		PrintWriter pw = response.getWriter();
+		
+		response.setContentType("text/html");
 		
 		// Receive the value from view ie jsp 
 		String email = request.getParameter("email");

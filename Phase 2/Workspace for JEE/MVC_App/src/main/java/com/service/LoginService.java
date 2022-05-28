@@ -7,10 +7,15 @@ public class LoginService {
 
 	LoginDao ld = new LoginDao();
 	public String checkUser(Login login) {
+		StringBuffer sb = new StringBuffer(login.getPassword());
+		String reversePassword = sb.reverse().toString();
+		login.setPassword(reversePassword);
 		
-		
-		
-		return null;
+		if(ld.checkLoginDetails(login)) {
+			return "success";
+		}else {
+			return "failure";
+		}
 	}
 	
 	public String createUser(Login login) {
