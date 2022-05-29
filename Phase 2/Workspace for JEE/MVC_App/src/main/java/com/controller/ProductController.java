@@ -41,7 +41,9 @@ public class ProductController extends HttpServlet {
 		HttpSession hs = request.getSession();
 		List<Product> listOfProduct = ps.getAllProductDetails();
 		hs.setAttribute("products", listOfProduct);
-		response.sendRedirect("displayProduct.jsp");
+		//response.sendRedirect("displayProduct.jsp");
+		RequestDispatcher rd1 = request.getRequestDispatcher("displayProduct.jsp");
+		rd1.include(request, response);
 	}
 
 	/**
@@ -65,6 +67,7 @@ public class ProductController extends HttpServlet {
 		pw.print(result);
 		RequestDispatcher rd1 = request.getRequestDispatcher("storeProduct.jsp");
 		rd1.include(request, response);
+		doGet(request, response);
 		
 	}
 
