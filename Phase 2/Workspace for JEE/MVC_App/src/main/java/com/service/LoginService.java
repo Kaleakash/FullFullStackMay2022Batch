@@ -7,15 +7,27 @@ public class LoginService {
 
 	LoginDao ld = new LoginDao();
 	public String checkUser(Login login) {
-		StringBuffer sb = new StringBuffer(login.getPassword());
-		String reversePassword = sb.reverse().toString();
-		login.setPassword(reversePassword);
 		
-		if(ld.checkLoginDetails(login)) {
-			return "success";
+		if(login.getTypeOfUser().equals("Admin")) {
+				if(login.getEmail().equals("admin@gmail.com") && login.getPassword().equals("admin")) {
+					return "adminSuccess";
+				}else {
+					return "adminFailure";
+				}
 		}else {
-			return "failure";
+		
+			StringBuffer sb = new StringBuffer(login.getPassword());
+			String reversePassword = sb.reverse().toString();
+			login.setPassword(reversePassword);
+			
+			if(ld.checkLoginDetails(login)) {
+				return "userSuccess";
+			}else {
+				return "userFailure";
+			}
 		}
+		
+		
 	}
 	
 	public String createUser(Login login) {

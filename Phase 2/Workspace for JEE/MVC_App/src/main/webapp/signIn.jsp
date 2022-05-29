@@ -13,6 +13,10 @@
 	<input type="email" name="email"/><br/>
 	<label>Password</label>
 	<input type="password" name="password"/><br/>
+	<label>TypeOfUser</label>
+	<input type="radio" name="typeOfUser" value="Admin">Admin
+	<input type="radio" name="typeOfUser" value="User">User
+											<br/>
 	<input type="submit" value="SignIn"/>
 	<input type="reset" value="reset"/>
 </form>

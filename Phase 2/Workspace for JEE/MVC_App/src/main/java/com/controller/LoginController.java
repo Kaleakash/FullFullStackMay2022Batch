@@ -38,23 +38,30 @@ public class LoginController extends HttpServlet {
 		
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
+		String typeOfUser = request.getParameter("typeOfUser");
 		
 		Login ll = new Login();
 		ll.setEmail(email);
 		ll.setPassword(password);
+		ll.setTypeOfUser(typeOfUser);
 		
 		LoginService ls = new LoginService();
 		String result = ls.checkUser(ll);
-		RequestDispatcher rd1 = request.getRequestDispatcher("Home.jsp");
+		RequestDispatcher rd1 = request.getRequestDispatcher("adminHome.jsp");
 		RequestDispatcher rd2 = request.getRequestDispatcher("index.jsp");
-		
-		if(result.equals("success")) {
+		RequestDispatcher rd3 = request.getRequestDispatcher("userHome.jsp");
+		if(result.equals("adminSuccess")) {
+				hs.setAttribute("admin", ll.getEmail());
+				rd1.forward(request, response);
+		}else if(result.equals("userSuccess")){
 				hs.setAttribute("user", ll.getEmail());
-			rd1.forward(request, response);
+				rd3.forward(request, response);
 		}else {
-			pw.println("Invalid emailId or Password");
-			rd2.include(request, response);
+				pw.println("Invalid emailId or Password");
+				rd2.include(request, response);
 		}
+			
+		
 		
 	}
 

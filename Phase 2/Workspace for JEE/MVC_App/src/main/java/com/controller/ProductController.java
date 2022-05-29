@@ -67,7 +67,8 @@ public class ProductController extends HttpServlet {
 		pw.print(result);
 		RequestDispatcher rd1 = request.getRequestDispatcher("storeProduct.jsp");
 		rd1.include(request, response);
-		doGet(request, response);
+		
+		//doGet(request, response);
 		
 	}
 
