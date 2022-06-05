@@ -39,13 +39,33 @@ public class DemoTest {
 		
 		// Retrieve all records 
 		
+//		EmployeeService es = new EmployeeService();
+//		List<Employee> listOfEmp = es.getAllEmployee();
+//		System.out.println("Number of records are "+listOfEmp.size());
+//		Iterator<Employee> li  = listOfEmp.iterator();
+//		while(li.hasNext()) {
+//			Employee emp = li.next();
+//			System.out.println(emp);
+//		}
+		
+		// Retrieve all records with conditions 
+//		EmployeeService es = new EmployeeService();
+//		List<Employee> listOfEmp = es.getAllEmloyeeWithCondition(28000);
+//		System.out.println("Number of records are "+listOfEmp.size());
+//		Iterator<Employee> li  = listOfEmp.iterator();
+//		while(li.hasNext()) {
+//			Employee emp = li.next();
+//			System.out.println(emp);
+//		}
+		
+		// Retreive more than one property from Employee class 
 		EmployeeService es = new EmployeeService();
-		List<Employee> listOfEmp = es.getAllEmployee();
-		System.out.println("Number of records are "+listOfEmp.size());
-		Iterator<Employee> li  = listOfEmp.iterator();
+		List<Object[]> obj  = es.getEmployeeNameAndSalary();
+		Iterator<Object[]> li = obj.iterator();
+		
 		while(li.hasNext()) {
-			Employee emp = li.next();
-			System.out.println(emp);
+			Object []o = li.next();
+			System.out.println("Name is "+o[0]+ " Salary "+o[1]);
 		}
 	}
 

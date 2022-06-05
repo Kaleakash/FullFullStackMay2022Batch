@@ -40,4 +40,12 @@ public class EmployeeService {
 	public List<Employee> getAllEmployee() {
 		return ed.getAllEmployee();
 	}
+	
+	public List<Employee> getAllEmloyeeWithCondition(float salary){
+		return ed.getAllEmployeeWithConditions(salary);
+	}
+	
+	public List<Object[]> getEmployeeNameAndSalary() {
+		return ed.retrieveNameAndSalary();
+	}
 }

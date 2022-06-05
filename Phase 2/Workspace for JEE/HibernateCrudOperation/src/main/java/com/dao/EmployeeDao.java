@@ -84,4 +84,54 @@ public class EmployeeDao {
 			List<Employee> listOfEmp  = qry.list();
 			return listOfEmp;
 	}
+	
+	public List<Employee> getAllEmployeeWithConditions(float salary) {
+		Configuration con = new Configuration();
+		con.configure("hibernate.cfg.xml");		// load the database details as well as entity class 
+		SessionFactory sf = con.buildSessionFactory();	// Connection in jdbc 
+		Session session = sf.openSession();		// Statement and PreparedStatement 
+			//Query qry= session.createQuery("select emp from Employee emp");
+			// static condition 
+			//Query qry = session.createQuery("select emp from Employee emp where emp.salary > 30000");
+			// dynamic condition with label query 
+//			Query qry = session.createQuery("select emp from Employee emp where emp.salary > :salary");
+//			qry.setParameter("salary", salary);
+		
+		   // dynamic condition with place holder  
+			Query qry = session.createQuery("select emp from Employee emp where emp.salary > ?1");
+			qry.setParameter(1, salary);
+			List<Employee> listOfEmp  = qry.list();
+			return listOfEmp;
+	}
+	
+	public List<String>	retrieveOnlyNames() {
+		Configuration con = new Configuration();
+		con.configure("hibernate.cfg.xml");		 
+		SessionFactory sf = con.buildSessionFactory();	
+		Session session = sf.openSession();		
+		Query qry = session.createQuery("select emp.name from Employee emp");
+		List<String> listOfEmp  = qry.list();
+		return listOfEmp;
+	}
+	
+	public List<Object[]> retrieveNameAndSalary() {
+		Configuration con = new Configuration();
+		con.configure("hibernate.cfg.xml");		 
+		SessionFactory sf = con.buildSessionFactory();	
+		Session session = sf.openSession();		
+		Query qry = session.createQuery("select emp.name,emp.salary from Employee emp");
+		List<Object[]> listOfEmp  = qry.list();
+		return listOfEmp;
+	}
+	
+	public List<Object[]> retrieveDataUsingSql() {
+		Configuration con = new Configuration();
+		con.configure("hibernate.cfg.xml");		 
+		SessionFactory sf = con.buildSessionFactory();	
+		Session session = sf.openSession();		
+		Query qry = session.createNativeQuery("select * from employee");// sql query 
+		List<Object[]> listOfEmp  = qry.list();
+		return listOfEmp;
+	}
+	
 }
