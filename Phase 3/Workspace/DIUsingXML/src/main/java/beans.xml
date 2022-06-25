@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+<bean class="com.bean.Employee" id="emp1" scope="singleton"></bean>
+
+<bean class="com.bean.Employee" id="emp2" scope="prototype"></bean>
+
+<bean class="com.bean.Employee" id="emp3">
+	<constructor-arg value="101"></constructor-arg>
+	<constructor-arg value="Ravi"></constructor-arg>
+	<constructor-arg value="12000"></constructor-arg>
+</bean>
+
+
+<bean class="com.bean.Employee" id="emp4">
+	<constructor-arg value="Ramesh" index="1"></constructor-arg>
+	<constructor-arg value="102" index="0"></constructor-arg>
+	<constructor-arg value="14000" index="2"></constructor-arg>
+</bean>
+
+<bean class="com.bean.Employee" id="emp5">
+	<property name="id" value="103"></property>
+	<property name="name" value="Ajay"></property>
+	<property name="salary" value="17000"></property>
+</bean>
+
+<bean class="com.bean.Employee" id="emp6">
+	<property name="salary" value="19000"></property>
+	<property name="name" value="Dinesh"></property>
+</bean>
+
+</beans>
+ 
