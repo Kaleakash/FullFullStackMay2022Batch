@@ -155,10 +155,14 @@ spring boot jpa starter
 
 spring boot in jsp starter 
 
+with JSP jasper version 
+
+
+
 <dependency>
     <groupId>org.apache.tomcat.embed</groupId>
     <artifactId>tomcat-embed-jasper</artifactId>
-   </dependency>
+</dependency>
 
  <dependency>
     <groupId>org.springframework.boot</groupId>
