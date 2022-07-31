@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/JavaScript">
+        function readValue(){
+        //1st way : document.formname.componentname.value
+        //var name = document.f1.user.value;
+        //alert("Welcome "+name);
+        //2nd way : using id attribute 
+        //var name = document.getElementById("n1").value;
+        //alert("Welcome "+name);
+        //3rd way : using name attribute 
+        var name = document.getElementsByName("user")[0].value;
+        //alert("Welcome "+name);
+        //document.getElementsByName("result")[0].value=name;
+        document.getElementById("n2").value=name;
+        document.getElementById("n3").innerHTML=name;
+        document.getElementsByName("user")[0].value="";
+        var h1Value  = document.getElementsByTagName("h1")[0].innerHTML
+        //alert(h1Value);
+        document.getElementById("n4").innerHTML=h1Value;
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to JS Training</h1>
+    <form name="f1">
+    Name :<input type="text" name="user" id="n1"/><br/>
+    Result : <input type="text" name="result" id="n2"/><br/>
+    Output : <span id="n3">
+
+    </span>
+    <br/>
+    <p id="n4"></p>
+    <input type="button" value="click here" onclick="readValue()"/>
+    </form>
+</body>
+</html>
