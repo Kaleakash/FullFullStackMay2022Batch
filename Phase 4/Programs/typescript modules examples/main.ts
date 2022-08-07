@@ -1,0 +1,11 @@
+import { display1,display } from "./abc";
+import {display2,display as dis} from "./xyz";
+import * as obj from './mno';
+display1();
+display2();
+display();
+dis();
+obj.dis1();
+obj.dis2();
+obj.dis3();
+obj.dis4();

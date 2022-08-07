@@ -39,4 +39,20 @@ empInfo(101,"Ramesh");
 empInfo(102);
 empInfo();
 
+// Rest parameter : this parameter is use to receive 0, 1 or many values.
+ // syntax ...variableName:dataType[];
+ // we can use only one rest parameter in function and it must be 
+ // last parameter in function. 
+function employeeDetails(id:number,name:string,salary:number,...skillset:string[]){
+
+}
+let skillInfo:string[]=["C","C++","java","Python"]
+
+employeeDetails(1,"Ravi",120000,"C");
+employeeDetails(2,"Ramesh",160000);
+employeeDetails(3,"Ajay",180000,"C","C++");
+
+
+
+
 
