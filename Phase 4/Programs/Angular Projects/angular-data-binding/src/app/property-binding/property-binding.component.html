@@ -1,0 +1,13 @@
+<div>
+    <h2>One way data binding using - Property binding</h2>
+    <input type="text" name="uname" value="Java Technologies"/><br/>
+    <input type="text" value="tech"/><br/>
+    <input type="text" [value]="tech"/><br/>
+    <div [innerText]="tech"></div>
+    <br/>
+    {{tech}}  <br/>
+    <p [innerText]="tech"></p>
+    <input type="button" value="click here" disabled/><br/>
+    <input type="button" value="click here" disabled={{f1}}/><br/>
+    <input type="button" value="click here" [disabled]="f2"/>
+</div>

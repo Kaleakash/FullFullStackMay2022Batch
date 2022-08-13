@@ -1,0 +1,35 @@
+<div>
+    <h2>Angular Structure Directive</h2>
+    <p>This is simple paragrap tag</p>
+    <p *ngIf="true">This is simple p tag with ngIf</p>
+    <p *ngIf="false">This is simple p tag with ngIf</p>
+    <p *ngIf="f1">This is simple p tag with ngIf</p>
+    <p *ngIf="f2">This is simple p tag with ngIf</p>
+    <input type="button" value="Click here" (click)="fun()"/>
+    <br/>
+    <div *ngIf="flag">
+        Welcome to Angular Framework
+        <p>We are learning data binding and types of diretives</p>
+    </div>
+    <br/>
+    <input type="button" [value]="msg" (click)="toggle()"/>
+    <div *ngIf="f3">
+            Welcome
+    </div>
+    <br/>
+    All Student names are {{names}}
+    <br/>
+    <h2>Add Student names are </h2>
+    <div *ngFor="let name of names">
+            <p>{{name}}</p>
+    </div>
+    <br/>
+    <ul>
+        <li *ngFor="let name of names">{{name}}</li>
+    </ul>
+</div>
+
+
+
+
+

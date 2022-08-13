@@ -1,0 +1,12 @@
+<div>
+    <h2>One way data binding - using event binding</h2>
+    <input type="button" value="click here" (click)="fun()"/>
+    <br/>
+    {{msg}} or <span [innerText]="msg"></span>
+    <br/>
+    <h2> Template Reference</h2>
+    Name :<input type="text" #nameRef/><br/>
+    <input type="button" value="Pass Value" (click)="passValue(nameRef)"/><br/>
+    {{name}}
+
+</div>
