@@ -1,0 +1,12 @@
+<div>
+    <h2>Login Page using Model driven Form</h2>
+    <form [formGroup]="loginRef" (ngSubmit)="checkUser()">
+        <label>EmailId</label>
+        <input type="email" formControlName="email"/><br/>
+        <label>Password</label>
+        <input type="password" formControlName="password"/><br/>
+        <input type="submit" value="submit"/>
+        <input type="reset" value="reset"/>
+    </form>
+    {{msg}}
+</div>

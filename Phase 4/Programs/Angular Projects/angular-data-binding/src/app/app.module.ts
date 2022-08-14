@@ -9,6 +9,7 @@ import { EventBindingComponent } from './event-binding/event-binding.component';
 import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
 import { FormsModule } from '@angular/forms';
 import { StructureDirectiveComponent } from './structure-directive/structure-directive.component';
+import { AttributeDirectiveComponent } from './attribute-directive/attribute-directive.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,8 @@ import { StructureDirectiveComponent } from './structure-directive/structure-dir
     PropertyBindingComponent,
     EventBindingComponent,
     TwoWayBindingComponent,
-    StructureDirectiveComponent
+    StructureDirectiveComponent,
+    AttributeDirectiveComponent
   ],
   imports: [
     BrowserModule,FormsModule

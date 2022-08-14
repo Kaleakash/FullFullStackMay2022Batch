@@ -1,0 +1,18 @@
+<div>
+    <h2>Attribute Directive</h2>
+    <p style="color:red">This is inline css rules</p>
+    <p [ngStyle]="{'color':'red'}">This is angular ngStyle attribute</p>
+    <p [ngStyle]="styleVariable">This is angular ngStyule attribute with variable</p>
+
+    <p class="abc">This is css class selector</p>
+    <p [ngClass]=" 'abc' ">This is ngClass atribute from angular</p>
+
+    <p [ngClass]="{abc:true}">This is ngClass atribute from angular with boolean value</p>
+    <p [ngClass]="{abc:false}">This is ngClass atribute from angular with boolean value</p>
+    <p [ngClass]="{abc:true,xyz:false}">This is ngClass atribute from angular with boolean value</p>
+    <p [ngClass]="{abc:true,xyz:true}">This is ngClass atribute from angular with boolean value</p>
+    <input type="button" value="click here" (click)="changeCSSRules()"/>
+    <div [ngClass]="{abc:f1,xyz:f2}">
+        Welcome to Angular with ngClass with dynamic css effect 
+    </div>
+</div>

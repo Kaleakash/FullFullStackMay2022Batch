@@ -30,6 +30,15 @@ export class StructureDirectiveComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  addEmployee(idRef:any,nameRef:any,salaryRef:any){
+    let emp = new Employee(idRef.value,nameRef.value,salaryRef.value);
+       this.employees.push(emp);
+    idRef.value="";
+    nameRef.value="";
+    salaryRef.value="";
+  }
+
   fun() {
     this.flag = true;
   }

@@ -27,9 +27,28 @@
     <ul>
         <li *ngFor="let name of names">{{name}}</li>
     </ul>
+    Id<input type="number" #idRef/><br/>
+    Name<input type="text" #nameRef/><br/>
+    Salary<input type="number" #salaryRef/><br/>
+    <input type="button" value="Add Employee" (click)="addEmployee(idRef,nameRef,salaryRef)"/>
+
+    <h2>Employee Details </h2>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Salary</th>
+        </tr>
+        <tr *ngFor="let emp of employees">
+                <td>{{emp.id}}</td>
+                <td>{{emp.name}}</td>
+                <td>{{emp.salary}}</td>
+        </tr>
+    </table>
 </div>
 
 
 
 
 
+    
