@@ -15,6 +15,21 @@ export class ProductService {
   // }
 
   loadProductData() :Observable<Product[]>{
-    return this.http.get<Product[]>("http://localhost:8080/product/findAllProduct");
+    return this.http.get<Product[]>("http://localhost:8080/product/findAllProduct");    // by default json consider 
+  }
+
+  // post method take two parameter 1st url and 2nd object in json format.
+  // by default all method return type json consider.  
+  storeProduct(product:any):Observable<string>{
+    return this.http.post("http://localhost:8080/product/storeProduct",product,{responseType:'text'});
+  }
+
+  updateProduct(product:any):Observable<string>{
+    return this.http.put("http://localhost:8080/product/updateProduct",product,{responseType:'text'});
+  }
+  
+
+  deleteProduct(pid:number):Observable<string> {
+    return this.http.delete("http://localhost:8080/product/deleteProduct/"+pid,{responseType:"text"});
   }
 }

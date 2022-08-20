@@ -1,9 +1,27 @@
 <div>
     <!-- <input type="button" value="Load All Product Details"
     (click)="loadAllProduct()"/> -->
+    
+    <h2>Add Product</h2>
+    <form [formGroup]="productRef" (ngSubmit)="addProduct()">
+        <label>PId</label>
+        <input type="number" formControlName="pid"/><br/>
+        <label>PName</label>
+        <input type="text" formControlName="pname"/><br/>
+        <label>Price</label>
+        <input type="number" formControlName="price"/><br/>
+        <label>URL</label>
+        <input type="url" formControlName="url"/><br/>
+        <input type="submit" [value]="buttonName"/>
+        <input type="reset" value="reset"/>
+    </form>
     <br/>
+    <span style="color:red">{{storeMsg}}</span>
+    <hr/>
     <div *ngFor="let product of products">
         <img src={{product.url}} width="200px" height="200px"/>
         <span>Name : {{product.pname}} Price : {{product.price}}</span>
+        <input type="button" value="Delete" (click)="deleteProduct(product.pid)"/>
+        <input type="button" value="update" (click)="updateProduct(product)"/>
     </div>
 </div>
