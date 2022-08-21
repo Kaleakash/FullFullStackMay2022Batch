@@ -1,0 +1,12 @@
+<div>
+<form #loginRef="ngForm" (ngSubmit)="checkUser(loginRef)">
+    <label>Email Id</label>
+    <input type="email" name="emailid" ngModel/><br/>
+    <label>Password</label>
+    <input type="password" name="password" ngModel/><br/>
+    <input type="submit" value="submit"/>
+    <input type="reset" value="reset"/>
+</form>
+<br/>
+<span style="color:red">{{msg}}</span>
+</div>

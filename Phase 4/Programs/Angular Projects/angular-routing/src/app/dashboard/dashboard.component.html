@@ -1,0 +1,8 @@
+<div>
+    <h2>Welcome to Home page user {{emailid}}</h2>
+    <a routerLink="addproduct">Add Product</a> |
+    <a routerLink="displayproduct">Display Product</a>
+    <br/>
+    <router-outlet></router-outlet>
+    <input type="button" value="logout" (click)="logout()"/>
+</div>

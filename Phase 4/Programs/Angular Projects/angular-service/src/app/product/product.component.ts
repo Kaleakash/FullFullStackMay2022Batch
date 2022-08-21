@@ -36,6 +36,7 @@ export class ProductComponent implements OnInit {
     //alert("event fired")
     let product = this.productRef.value;
     //console.log(product);
+   
     if(this.buttonName=="Add Product"){
       
       this.ps.storeProduct(product).subscribe(result=>this.storeMsg=result,error=>this.storeMsg=error,()=> {
@@ -63,10 +64,10 @@ export class ProductComponent implements OnInit {
   }
 
   updateProduct(product:any) {
-      this.productRef.get("pid")?.setValue(product.pid);
-      this.productRef.get("pname")?.setValue(product.pname);
-      this.productRef.get("price")?.setValue(product.price);
-      this.productRef.get("url")?.setValue(product.url);
+      this.productRef.get("pid")?.setValue(product.pid);      // change formcontrolname value 
+      this.productRef.get("pname")?.setValue(product.pname); // change formcontrolname value
+      this.productRef.get("price")?.setValue(product.price);  // change formcontrolname value
+      this.productRef.get("url")?.setValue(product.url);    
       this.buttonName="Update Product";
   }
 }
