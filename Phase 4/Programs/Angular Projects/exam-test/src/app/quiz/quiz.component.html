@@ -1,0 +1,11 @@
+<div>
+    <div *ngFor="let q of questions">
+        <div>{{q.qnumber}} ) {{q.question}} ? </div>
+        <div>
+            <input type="radio" name={{q.qnumber}} value={{q.ans1}} (click)="correctAns(q.qnumber,q.ans1)"/>{{q.ans1}}
+            <input type="radio" name={{q.qnumber}} value={{q.ans2}} (click)="correctAns(q.qnumber,q.ans2)"/>{{q.ans2}}
+            <input type="radio" name={{q.qnumber}} value={{q.ans3}} (click)="correctAns(q.qnumber,q.ans3)"/>{{q.ans3}}
+            <input type="radio" name={{q.qnumber}} value={{q.ans4}} (click)="correctAns(q.qnumber,q.ans4)"/>{{q.ans4}}
+        </div>
+    </div>
+</div>

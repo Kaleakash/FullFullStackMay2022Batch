@@ -1,0 +1,6 @@
+{
+    "questions":[
+           {"qnumber":1,"question":"4+5","ans1":"9","ans2":"8","ans3":"10","ans4":"7"},
+           {"qnumber":2,"question":"ng means","ans1":"not getting","ans2":"next going","ans3":"next generate","ans4":"no generation"}
+    ]
+}
