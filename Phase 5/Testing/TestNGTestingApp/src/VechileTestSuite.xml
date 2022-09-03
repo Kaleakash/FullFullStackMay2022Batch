@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="Suite">
+
+<groups>
+	<run>
+		<include name="loan"></include>
+	</run>
+</groups>
+
+  <test name="Test">
+    <classes>
+      <class name="com.test.CarServiceTest"/>
+      <class name="com.test.BikeServiceTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
