@@ -5,7 +5,7 @@
     <classes>
       <class name="com.test.EmployeeServiceTest">
         <methods>
-          <include name="mockTestMethod"/>
+          <include name="testFindEmployeeDetails"/>
         </methods>
       </class> <!-- com.test.EmployeeServiceTest -->
     </classes>
