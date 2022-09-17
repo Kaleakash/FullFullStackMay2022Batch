@@ -14,11 +14,12 @@ import com.bean.Employee;
 @RequestMapping("employee")
 public class EmployeeController {
 
+	// http://localhost:9090/employee/say
 	@GetMapping(value = "say")
 	public String sayHello() {
 		return "Welcome to Spring boot with rest api with docker";
 	}
-	
+	// http://localhost:9090/employee/findEmployees 
 	@GetMapping(value = "findEmployees",produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Employee> getAllEmployee() {
 		List<Employee> listOfEmp = new ArrayList<Employee>();
